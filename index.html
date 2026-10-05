@@ -1,0 +1,791 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel Kirana & Colddrink Store - Wholesale Rates</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landingPage" class="page-container">
+        <header>
+    <div class="container header-flex">
+        <div class="logo">
+            <h1 style="color: #fff;"><i class="fas fa-store"></i> Patel Kirana Store</h1>
+        </div>
+        
+        <div class="header-info">
+            <span class="wholesale-tag">Wholesale Rates</span>
+            <span class="contact-number"><i class="fas fa-phone"></i> 8115910227</span>
+        </div>
+    </div>
+</header>
+
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <span class="eyebrow hero-eyebrow">Local wholesale store</span>
+                    <h2>Best Wholesale Prices for Kirana &amp; Cold Drink Stores</h2>
+                    <p>Shop stronger margins, faster delivery, and exclusive offers for local shops. Simple login and no-fuss orders.</p>
+                    <div class="hero-actions">
+                        <button onclick="navigateToLogin()" class="btn-primary hero-action hero-action-primary"><i class="fas fa-basket-shopping"></i> Start Shopping <i class="fas fa-arrow-right"></i></button>
+                        <button onclick="navigateToLogin()" class="btn-secondary hero-action hero-action-secondary"><i class="fas fa-box-open"></i> View Products</button>
+                    </div>
+                    <div class="hero-cards">
+                        <div class="hero-card"><i class="fas fa-truck"></i><span>Fast Delivery</span></div>
+                        <div class="hero-card"><i class="fas fa-tags"></i><span>Wholesale Rates</span></div>
+                        <div class="hero-card"><i class="fas fa-lock"></i><span>Secure Login</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Store showcase">
+                    <div class="hero-image-main">
+                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=900&q=85" alt="Cold drinks and grocery store stock" />
+                        <div class="floating-badge">
+                            <strong>Same-day</strong>
+                            <span>delivery</span>
+                        </div>
+                    </div>
+                    <div class="hero-mini-cards">
+                        <div class="hero-mini-card">
+                            <small>Happy stores</small>
+                            <strong>25k+</strong>
+                        </div>
+                        <div class="hero-mini-card">
+                            <small>Customer rating</small>
+                            <strong>4.9★</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing-highlights">
+            <div class="container highlight-grid">
+                <div class="highlight-card">
+                    <h3>Fresh Stock Daily</h3>
+                    <p>Get fresh grocery and drinks inventory delivered quickly to your store.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Bulk Discount</h3>
+                    <p>Buy more and save more with attractive prices for bulk orders.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Trusted Local Service</h3>
+                    <p>Designed for small shops with easy ordering, fast support, and clear pricing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing-offers-panel">
+            <div class="container">
+                <h2>Special Offers Live Now</h2>
+                <div class="landing-offers" id="landingOffers"></div>
+            </div>
+        </section>
+
+        <section class="public-reviews-panel">
+            <div class="container">
+                <div id="publicReviewsRoot"></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Patel Kirana Store | Contact: 8115910227</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="page-container hidden">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="logo">
+                    <i class="fas fa-store" style="font-size: 3rem; color: #667eea;"></i>
+                    <h2> Patel Kirana Store</h2>
+                    <p style="color: #666; margin-top: 0.5rem;">Welcome</p>
+                </div>
+
+                
+                
+                <!-- Login Form Tab -->
+                <div id="loginFormTab" class="auth-tab-content active">
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label>📱 Mobile Number</label>
+                            <input type="tel" id="loginMobile" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}">
+                        </div>
+                        <div class="input-group">
+                            <label>🔐 Password</label>
+                            <div class="password-container">
+                                <input type="password" id="loginPassword" placeholder="Enter password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-group">
+    </div>
+
+<div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <button type="button" onclick="handleExistingUserLogin()" class="btn-primary" style="flex: 1;">LOGIN</button>
+    <button type="button" onclick="showAuthTab('register')" class="btn-primary" style="flex: 1; background-color: #6c757d;">REGISTER</button>
+</div>
+
+<button type="button" onclick="showForgetPasswordForm()" class="btn-link">Forgot Password?</button>
+                        
+                    </form>
+                </div>
+
+                <!-- Register Form Tab -->
+                <div id="registerFormTab" class="auth-tab-content hidden">
+                    <form id="registerForm">
+                        <div class="input-group">
+                            <label>👤 Full Name</label>
+                            <input type="text" id="registerName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>📱 Mobile Number</label>
+                            <input type="tel" id="registerMobile" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}">
+                        </div>
+                        <div class="input-group">
+                            <label>🏠 Address</label>
+                            <input type="text" id="registerAddress" placeholder="Enter your address" required>
+                        </div>
+                        <div class="input-group">
+                            <label>🔐 Create Password</label>
+                            <div class="password-container">
+                                <input type="password" id="registerPassword" placeholder="Create a strong password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" onclick="handleNewUserRegister()" class="btn-primary" style="width: 100%; margin-top: 1rem;">REGISTER</button>
+                    </form>
+                </div>
+
+                <!-- Forget Password Form -->
+                <div id="forgetPasswordContainer" class="hidden">
+                    <form id="forgetPasswordForm">
+                        <h3 style="color: #333; margin-bottom: 1rem;">🔑 Reset Password</h3>
+                        <div class="input-group">
+                            <label>Mobile Number</label>
+                            <input type="tel" id="resetMobile" placeholder="Enter registered mobile number" required pattern="[0-9]{10}">
+                        </div>
+                        <div class="input-group">
+                            <label>New Password</label>
+                            <div class="password-container">
+                                <input type="password" id="newPassword" placeholder="Enter new password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('newPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary" id="resetBtn">Reset Password</button>
+                        <button type="button" onclick="backToLoginForm()" class="btn-link">Back to Login</button>
+                    </form>
+                </div>
+
+                <!-- Admin Login Button -->
+                <div class="admin-login-section" style="margin-top: 1.5rem; text-align: center; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <button onclick="showAdminLogin()" class="btn-admin">🔐 Admin Login</button>
+                    <button onclick="showPartnerLogin()" class="btn-secondary btn-partner">🚚 Delivery Partner</button>
+                </div>
+
+                <div id="partnerAuthPanel" class="hidden partner-auth-panel">
+                    <h3>Delivery Partner</h3>
+                    <form id="partnerLoginForm">
+                        <input id="partnerLoginPhone" type="tel" placeholder="Phone number" required>
+                        <input id="partnerLoginPassword" type="password" placeholder="Password" required>
+                        <button class="btn-primary" type="submit">Partner Login</button>
+                    </form>
+                    <button type="button" onclick="showPartnerRegister()" class="btn-link">New partner? Register & submit KYC</button>
+                    <form id="partnerRegisterForm" class="hidden">
+                        <input id="partnerRegisterName" type="text" placeholder="Full name" required>
+                        <input id="partnerRegisterPhone" type="tel" placeholder="Phone number" required>
+                        <input id="partnerRegisterEmail" type="email" placeholder="Email (optional)">
+                        <input id="partnerRegisterPassword" type="password" placeholder="Password" required>
+                        <input id="partnerRegisterKyc" type="text" placeholder="KYC document reference" required>
+                        <button class="btn-primary" type="submit">Submit Partner Application</button>
+                    </form>
+                </div>
+
+                <div class="login-type" style="margin-top: 1rem; text-align: center;">
+                    <button onclick="showPage('landingPage')" class="btn-secondary btn-home">← Back to Home</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminPage" class="page-container hidden admin-dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <h3><i class="fas fa-user-shield"></i> Admin Panel</h3>
+                <p>Anuj Patel | 8115910227</p>
+            </div>
+            <nav>
+                <a href="#" class="active" onclick="showAdminSection('dashboard')"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#" onclick="showAdminSection('orders')"><i class="fas fa-shopping-cart"></i> Orders</a>
+                <a href="#" onclick="showAdminSection('products')"><i class="fas fa-box"></i> Products</a>
+                <a href="#" onclick="showAdminSection('offers')"><i class="fas fa-tags"></i> Offers</a>
+                <a href="#" onclick="showAdminSection('users')"><i class="fas fa-users"></i> Users</a>
+                <a href="#" onclick="showAdminSection('inventory')"><i class="fas fa-warehouse"></i> Inventory</a>
+                <a href="#" onclick="showAdminSection('coupons')"><i class="fas fa-ticket-alt"></i> Coupons</a>
+                <a href="#" onclick="showAdminSection('operations')"><i class="fas fa-truck"></i> Delivery & Stores</a>
+                <a href="#" onclick="showAdminSection('support')"><i class="fas fa-headset"></i> Support</a>
+                <a href="#" onclick="showAdminSection('marketing')"><i class="fas fa-bullhorn"></i> Banners</a>
+                <a href="#" onclick="showAdminSection('reports')"><i class="fas fa-chart-line"></i> Reports</a>
+                <a href="#" onclick="showAdminSection('roles')"><i class="fas fa-user-shield"></i> Roles</a>
+                <a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header>
+                <h1>Admin Dashboard</h1>
+                <div class="header-actions">
+                    <span>Admin: Anuj Patel</span>
+                    <button onclick="logout()" class="btn-logout"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </header>
+
+            <!-- Dashboard Stats -->
+            <section id="adminDashboard" class="admin-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="totalOrders">0</h3>
+                        <p>Total Orders</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="todaySales">₹0</h3>
+                        <p>Today Sales</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalProducts">0</h3>
+                        <p>Products</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="activeOffers">0</h3>
+                        <p>Active Offers</p>
+                    </div>
+                </div>
+                <div class="admin-messages-card">
+                    <h2>Admin Notifications</h2>
+                    <div class="message-list">
+                        <ul id="adminMessagesList"></ul>
+                    </div>
+                </div>
+                <div id="reactAdminWidget" class="admin-messages-card"></div>
+                <div class="admin-analytics-grid">
+                    <div class="admin-form"><h3>Revenue</h3><strong id="adminRevenue">₹0</strong><p>Completed and confirmed sales</p></div>
+                    <div class="admin-form"><h3>Low Stock</h3><strong id="adminLowStock">0</strong><p>Products needing replenishment</p></div>
+                    <div class="admin-form"><h3>Open Tickets</h3><strong id="adminOpenTickets">0</strong><p>Customer support requests</p></div>
+                </div>
+            </section>
+
+            <!-- Orders -->
+            <section id="adminOrders" class="admin-section hidden">
+                <h2>Recent Orders <button onclick="exportOrders()" class="btn-export"><i class="fas fa-download"></i> Export</button></h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Products Management -->
+            <section id="adminProducts" class="admin-section hidden">
+                <h2>Products Management</h2>
+                <div class="admin-form">
+                    <h3>Add/Edit Product</h3>
+                    <form id="productForm">
+                        <input type="hidden" id="editProductId">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Product Name</label>
+                                <input type="text" id="productName" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Price (₹)</label>
+                                <input type="number" id="productPrice" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Product Image</label>
+                                <div class="image-upload-container">
+                                    <input type="file" id="productImageFile" accept="image/*" style="display: none;">
+                                    <button type="button" onclick="document.getElementById('productImageFile').click()" class="btn-secondary product-image-upload-btn">
+                                        <i class="fas fa-camera"></i> Choose from Gallery
+                                    </button>
+                                    <input type="text" id="productImage" placeholder="Or enter emoji/URL" value="🥤">
+                                    <div id="imagePreview" class="image-preview hidden">
+                                        <img id="previewImg" src="" alt="Preview">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Category</label>
+                                <select id="productCategory">
+                                    <option value="Cold Drink">Cold Drink</option>
+                                    <option value="Kirana">Kirana</option>
+                                    <option value="Pulses">Pulses</option>
+                                    <option value="Snacks">Snacks</option>
+                                    <option value="Oil">Oil</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Instant Food">Instant Food</option>
+                                    <option value="Sauces">Sauces</option>
+                                    <option value="Spices">Spices</option>
+                                    <option value="Beverages">Beverages</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Personal Care">Personal Care</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="product-form-actions">
+                            <button type="submit" class="btn-primary">Add Product</button>
+                            <button type="button" onclick="cancelEdit()" class="btn-secondary product-cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-container" style="margin-top: 2rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Offers -->
+            <section id="adminOffers" class="admin-section hidden">
+                <h2>Manage Offers</h2>
+                <div class="admin-form">
+                    <form id="offerForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Offer Title</label>
+                                <input type="text" id="offerTitle" placeholder="5% OFF on Cold Drinks" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Discount %</label>
+                                <input type="number" id="offerDiscount" min="1" max="100" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Valid Till</label>
+                            <input type="datetime-local" id="offerExpiry" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Add Offer</button>
+                    </form>
+                </div>
+                <div class="offers-grid" id="adminOffersList"></div>
+            </section>
+
+            <section id="adminUsers" class="admin-section hidden">
+                <h2>User Management</h2>
+                <div class="table-container"><table><thead><tr><th>Name</th><th>Mobile</th><th>Address</th><th>Action</th></tr></thead><tbody id="usersTable"></tbody></table></div>
+            </section>
+
+            <section id="adminInventory" class="admin-section hidden">
+                <h2>Inventory & Categories</h2>
+                <div class="admin-form"><form id="inventoryForm"><div class="form-row"><div class="input-group"><label>Product</label><select id="inventoryProduct"></select></div><div class="input-group"><label>Stock quantity</label><input type="number" id="inventoryStock" min="0" required></div></div><button class="btn-primary" type="submit">Update Stock</button></form></div>
+                <div class="table-container" style="margin-top:2rem"><table><thead><tr><th>Product</th><th>Category</th><th>Stock</th><th>State</th></tr></thead><tbody id="inventoryTable"></tbody></table></div>
+            </section>
+
+            <section id="adminCoupons" class="admin-section hidden">
+                <h2>Coupon Management</h2>
+                <div class="admin-form"><form id="couponForm"><div class="form-row"><div class="input-group"><label>Coupon code</label><input id="adminCouponCode" required></div><div class="input-group"><label>Discount %</label><input id="adminCouponDiscount" type="number" min="1" max="100" required></div></div><button class="btn-primary" type="submit">Save Coupon</button></form></div>
+                <div id="couponAdminList" class="admin-list"></div>
+            </section>
+
+            <section id="adminOperations" class="admin-section hidden">
+                <h2>Delivery & Dark Stores</h2>
+                <div class="admin-form"><form id="storeForm"><div class="form-row"><div class="input-group"><label>Store name</label><input id="storeName" required></div><div class="input-group"><label>City / area</label><input id="storeArea" required></div><div class="input-group"><label>Capacity</label><input id="storeCapacity" type="number" min="1" required></div></div><button class="btn-primary" type="submit">Add Store</button></form></div>
+                <div id="storeList" class="admin-list"></div><h3>Delivery queue</h3><div id="deliveryQueue" class="admin-list"></div>
+            </section>
+
+            <section id="adminSupport" class="admin-section hidden">
+                <h2>Customer Support Tickets</h2>
+                <div class="admin-form"><form id="ticketForm"><div class="form-row"><div class="input-group"><label>Customer</label><input id="ticketCustomer" required></div><div class="input-group"><label>Issue</label><input id="ticketIssue" required></div></div><button class="btn-primary" type="submit">Create Ticket</button></form></div>
+                <div id="ticketList" class="admin-list"></div>
+            </section>
+
+            <section id="adminMarketing" class="admin-section hidden">
+                <h2>Banners & Notifications</h2>
+                <div class="admin-form"><form id="bannerForm"><div class="input-group"><label>Banner message</label><input id="bannerMessage" required></div><button class="btn-primary" type="submit">Publish Banner</button></form></div>
+                <div id="bannerList" class="admin-list"></div>
+            </section>
+
+            <section id="adminReports" class="admin-section hidden">
+                <h2>Sales Reports & Analytics</h2>
+                <div id="reportSummary" class="admin-analytics-grid"></div><button onclick="exportOrders()" class="btn-primary"><i class="fas fa-download"></i> Export Sales CSV</button>
+            </section>
+
+            <section id="adminRoles" class="admin-section hidden">
+                <h2>Roles & Permissions</h2>
+                <div class="admin-form"><form id="roleForm"><div class="form-row"><div class="input-group"><label>Team member</label><input id="roleMember" required></div><div class="input-group"><label>Role</label><select id="roleName"><option>Manager</option><option>Inventory</option><option>Support</option><option>Delivery</option></select></div></div><button class="btn-primary" type="submit">Assign Role</button></form></div><div id="roleList" class="admin-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="userPage" class="page-container hidden">
+    <nav class="user-nav">
+    <div class="nav-container">
+        <div class="logo-row">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <h3> Patel Kirana Store</h3>
+            </div>
+        </div>
+
+        <div class="menu-row">
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" data-section="shop"><i class="fas fa-shopping-bag"></i> Shop</a>
+                    <a href="#" class="nav-link" data-section="categories"><i class="fas fa-folder-open"></i> Categories</a>
+                    <a href="#" class="nav-link" data-section="search"><i class="fas fa-search"></i> Search</a>
+                <a href="#" class="nav-link" data-section="cart"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0</span></a>
+                <a href="#" class="nav-link" data-section="wishlist"><i class="fas fa-heart"></i> Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" class="nav-link" data-section="orders"><i class="fas fa-history"></i> Orders</a>
+                <a href="#" class="nav-link" data-section="notifications"><i class="fas fa-bell"></i> Alerts <span id="notificationCount" class="nav-count">0</span></a>
+                <a href="#" class="nav-link" data-section="settings"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+        <main class="user-main">
+            <!-- Home -->
+            <section id="home" class="section active">
+                <div class="welcome-banner">
+                    <h2 id="homeWelcome">Welcome back</h2>
+                    <p>Fresh grocery, wholesale prices, and fast delivery.</p>
+                </div>
+                <div class="home-address-bar"><i class="fas fa-map-marker-alt"></i><div><small>Deliver to</small><strong id="homeDeliveryAddress">Add your delivery address</strong></div><button type="button" onclick="showUserSection('profile')" class="icon-button" title="Change address"><i class="fas fa-chevron-right"></i></button></div>
+                <div class="home-search-bar" onclick="openCustomerSearch()"><i class="fas fa-search"></i><span>Search products, brands, and categories</span><i class="fas fa-microphone"></i></div>
+                <div class="home-section-heading"><h3>Shop by category</h3><button type="button" onclick="showUserSection('shop')" class="btn-link">View all</button></div>
+                <div id="homeCategories" class="home-categories"></div>
+                <div class="home-offer-strip" id="homeOffers"></div>
+                <div class="home-section-heading"><h3>🔥 Best sellers</h3><button type="button" onclick="showUserSection('shop')" class="btn-link">Shop all</button></div>
+                <div id="bestSellerShelf" class="home-product-shelf"></div>
+                <div class="home-section-heading"><h3>⭐ Recommended for you</h3></div>
+                <div id="recommendedShelf" class="home-product-shelf"></div>
+                <div class="home-section-heading"><h3>🆕 New products</h3></div>
+                <div id="newProductShelf" class="home-product-shelf"></div>
+                <div class="home-section-heading"><h3>🔄 Buy again</h3></div>
+                <div id="buyAgainShelf" class="home-product-shelf"></div>
+                <div class="home-section-heading"><h3>👀 Recently viewed</h3></div>
+                <div id="recentlyViewedShelf" class="home-product-shelf"></div>
+                <div class="help-info">
+                    <div class="help-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p><strong>8115910227</strong></p>
+                    </div>
+                    <div class="help-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Timing</h4>
+                        <p>8AM - 10PM</p>
+                    </div>
+                    <div class="help-card">
+                        <i class="fas fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>8115910227</p>
+                    </div>
+                </div>
+                <div class="rating-card">
+                    <div class="rating-card-inner">
+                        <h3>Rate Your Shopping Experience</h3>
+                        <p>Tap the stars and submit your rating so we can serve you better.</p>
+                        <div class="rating-stars" id="userStars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <textarea id="ratingReview" rows="3" placeholder="Apni ray likhiye (optional)"></textarea>
+                        <small class="review-optional-note">Comment aur photo optional hain. Sirf rating dekar bhi submit kar sakte hain.</small>
+                        <div class="review-image-upload">
+                            <label for="ratingImageFile" class="btn-secondary">
+                                <i class="fas fa-camera"></i> Review photo upload karein
+                            </label>
+                            <input type="file" id="ratingImageFile" accept="image/*" hidden>
+                            <img id="ratingImagePreview" class="review-image-preview hidden" alt="Review photo preview">
+                        </div>
+                        <button onclick="submitRating()" class="btn-primary">Submit Rating</button>
+                        <p class="rating-summary" id="ratingSummary">Average Rating: <strong id="averageRating">0.0</strong> ⭐ from <span id="ratingCount">0</span> reviews</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search -->
+            <section id="search" class="section">
+                <div class="section-heading-row"><h2>Search products</h2><button type="button" onclick="showUserSection('shop')" class="btn-secondary">Browse shop</button></div>
+                <div class="product-search" role="search"><i class="fas fa-search"></i><input type="search" id="customerSearchInput" placeholder="Search atta, rice, oil..."><button type="button" onclick="runCustomerSearch()" class="btn-primary">Search</button></div>
+                <p id="searchHint" class="muted-text">Type a product name or category to find items.</p>
+            </section>
+
+                <!-- Categories -->
+                <section id="categories" class="section">
+                    <div class="section-heading-row"><div><p class="eyebrow">Browse the store</p><h2>Categories</h2></div><button type="button" onclick="showUserSection('shop')" class="btn-secondary">View all products</button></div>
+                    <div id="categoriesPageGrid" class="category-page-grid"></div>
+                </section>
+
+            <!-- Profile -->
+            <section id="profile" class="section">
+    <h2 style="text-align: center; color: #333;">My Profile</h2>
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="https://via.placeholder.com/150" id="profileImg" alt="Profile">
+            <input type="file" id="profileUpload" accept="image/*" style="display:none;">
+            <br>
+            <button onclick="document.getElementById('profileUpload').click()" class="btn-link" style="font-size: 14px;">
+                <i class="fas fa-edit"></i> Edit Photo
+            </button>
+        </div>
+
+        <div class="profile-info">
+            <input type="text" id="userName" placeholder="Full Name">
+            <input type="tel" id="userPhone" placeholder="Mobile Number">
+            <input type="text" id="userAddress" placeholder="Full Address">
+            
+            <button onclick="saveProfile()" class="btn-primary">SAVE PROFILE</button>
+        </div>
+    </div>
+    <div class="address-book">
+        <div class="section-heading-row"><h3>Saved Addresses</h3><button type="button" onclick="addAddress()" class="btn-secondary"><i class="fas fa-plus"></i> Add Address</button></div>
+        <div id="addressList" class="address-list"></div>
+    </div>
+    <div class="profile-shortcuts settings-group"><h3>Account shortcuts</h3><button type="button" onclick="showUserSection('orders')"><i class="fas fa-box"></i><span>My Orders<small>Track and reorder purchases</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('wishlist')"><i class="fas fa-heart"></i><span>Wishlist<small>Saved products</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('profile')"><i class="fas fa-map-marker-alt"></i><span>Manage Addresses</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="managePaymentMethods()"><i class="fas fa-credit-card"></i><span>Payment Methods</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('offers')"><i class="fas fa-ticket-alt"></i><span>Coupons</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('notifications')"><i class="fas fa-bell"></i><span>Notifications</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('settings')"><i class="fas fa-cog"></i><span>Settings<small>Account and privacy preferences</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('help')"><i class="fas fa-headset"></i><span>Help & Support</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span><i class="fas fa-chevron-right"></i></button></div>
+    <div class="payment-methods-book settings-group"><h3>Payment Methods</h3><button type="button" onclick="managePaymentMethods()"><i class="fas fa-money-bill-wave"></i><span>Cash on Delivery<small>Available at checkout</small></span><i class="fas fa-check-circle"></i></button><button type="button" onclick="managePaymentMethods()"><i class="fas fa-mobile-alt"></i><span>UPI / Online Payment<small>Use UPI apps during checkout</small></span><i class="fas fa-chevron-right"></i></button></div>
+</section>
+
+            <!-- Shop -->
+            <section id="shop" class="section">
+                <div id="shopOffersBanner" class="shop-offers-banner"></div>
+                <div class="shop-heading">
+                    <h2>Products <span id="offerBadge" class="offer-badge hidden"></span></h2>
+                    <span id="productResultCount" class="product-result-count"></span>
+                </div>
+                <div class="product-search" role="search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="search" id="productSearch" placeholder="Search atta, rice, oil..." aria-label="Search products">
+                    <button type="button" id="voiceSearchButton" class="icon-button" aria-label="Search by voice" title="Voice search"><i class="fas fa-microphone"></i></button>
+                    <button type="button" id="clearProductSearch" class="clear-search hidden" aria-label="Clear product search" title="Clear search">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div id="categoryChips" class="category-chips" aria-label="Product categories"></div>
+                <div class="products-grid" id="productsGrid"></div>
+            </section>
+
+            <!-- Wishlist -->
+            <section id="wishlist" class="section">
+                <div class="section-heading-row"><h2>My Wishlist</h2><span class="muted-text">Save items for later</span></div>
+                <div class="products-grid" id="wishlistGrid"></div>
+            </section>
+
+            <!-- Cart -->
+            <section id="cart" class="section">
+                <h2>Shopping Cart</h2>
+                <div id="cartItems"></div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <h3>Subtotal: ₹<span id="cartSubtotal">0</span></h3>
+                        <h3>Discount: ₹<span id="cartDiscount">0</span></h3>
+                        <h3 id="cartDeliveryCharge">Delivery charge: FREE</h3>
+                        <h2>Total: ₹<span id="cartTotal">0</span></h2>
+                    </div>
+                    <div class="coupon-row"><input id="couponCode" type="text" placeholder="Coupon code (e.g. SAVE10)"><button type="button" onclick="applyCoupon()" class="btn-secondary">Apply</button></div>
+                    <p id="couponMessage" class="form-message"></p>
+                    <button onclick="checkout()" class="btn-primary btn-large">Proceed to Payment</button>
+                </div>
+            </section>
+
+            <!-- Orders -->
+            <section id="orders" class="section">
+                <h2>My Orders</h2>
+                <div class="order-history-grid" id="orderHistoryList">
+                    <div class="order-history-card">
+                        <p style="margin:0;color:#666;">No orders yet. Add products to your cart and place an order to see your purchase history here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications -->
+            <section id="notifications" class="section">
+                <div class="section-heading-row"><h2>Notifications</h2><button type="button" onclick="markNotificationsRead()" class="btn-secondary">Mark all read</button></div>
+                <div id="notificationList" class="notification-list"></div>
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="section">
+                <div class="settings-heading"><div><p class="eyebrow">Your account</p><h2>Settings</h2><p class="muted-text">Manage your account, privacy, and shopping preferences.</p></div><button onclick="logout()" class="btn-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></div>
+                <div class="settings-grid">
+                    <div class="settings-group"><h3>Account</h3><button type="button" onclick="showUserSection('profile')"><i class="fas fa-user-edit"></i><span>Edit Profile<small>Update your name and profile photo</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="changeMobile()"><i class="fas fa-mobile-alt"></i><span>Change Mobile<small>Update your phone number</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="changeEmail()"><i class="fas fa-envelope"></i><span>Change Email<small>Add or update your email</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="changePassword()"><i class="fas fa-lock"></i><span>Change Password<small>Keep your account secure</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('profile')"><i class="fas fa-map-marker-alt"></i><span>Manage Addresses<small>Choose your delivery location</small></span><i class="fas fa-chevron-right"></i></button></div>
+                    <div class="settings-group"><h3>Notifications</h3><label><span><strong>Order Updates</strong><small>Delivery and order status updates</small></span><input type="checkbox" id="deliveryNotificationSetting" checked onchange="saveCustomerSetting('deliveryNotifications', this.checked)"></label><label><span><strong>Promotional Notifications</strong><small>Offers, deals, and price alerts</small></span><input type="checkbox" id="offerNotificationSetting" checked onchange="saveCustomerSetting('offerNotifications', this.checked)"></label></div>
+                    <div class="settings-group"><h3>Offers</h3><button type="button" onclick="showUserSection('offers')"><i class="fas fa-gift"></i><span>Offers & Discounts<small>View active discounts and store deals</small></span><i class="fas fa-chevron-right"></i></button><label><span><strong>Offer alerts</strong><small>Get notified about new offers</small></span><input type="checkbox" id="offerAlertSetting" checked onchange="saveCustomerSetting('offerAlerts', this.checked)"></label></div>
+                    <div class="settings-group"><h3>Preferences</h3><label><span><strong>Language</strong><small>Choose your app language</small></span><select id="languageSetting" onchange="saveCustomerSetting('language', this.value)"><option>English</option><option>Hindi</option></select></label><label><span><strong>Dark mode</strong><small>Switch between light and dark theme</small></span><input type="checkbox" id="darkModeSetting" onchange="toggleDarkMode(this.checked)"></label><label><span><strong>Data saver</strong><small>Reduce image and network usage</small></span><input type="checkbox" id="dataSaverSetting" onchange="saveCustomerSetting('dataSaver', this.checked)"></label></div>
+                    <div class="settings-group"><h3>Privacy & Security</h3><button type="button" onclick="showPrivacySettings()"><i class="fas fa-user-shield"></i><span>Privacy Settings<small>Manage your data and permissions</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="requestLocationPermission()"><i class="fas fa-location-arrow"></i><span>Location Permission<small>Allow location for delivery updates</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="clearSearchHistory()"><i class="fas fa-history"></i><span>Clear Search History<small>Remove recently viewed search data</small></span><i class="fas fa-chevron-right"></i></button><button type="button" class="settings-danger" onclick="deleteCustomerAccount()"><i class="fas fa-trash"></i><span>Delete Account<small>This action cannot be undone</small></span><i class="fas fa-chevron-right"></i></button></div>
+                    <div class="settings-group"><h3>Help</h3><button type="button" onclick="showUserSection('help')"><i class="fas fa-question-circle"></i><span>Help Center<small>Find answers to common questions</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showUserSection('help')"><i class="fas fa-headset"></i><span>Contact Support<small>Talk to our support team</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showInfoNotice('Terms & Conditions')"><i class="fas fa-file-contract"></i><span>Terms & Conditions</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showInfoNotice('Privacy Policy')"><i class="fas fa-shield-alt"></i><span>Privacy Policy</span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="showInfoNotice('About Patel Kirana Store')"><i class="fas fa-info-circle"></i><span>About App<small>Patel Kirana Store</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="rateApp()"><i class="fas fa-star"></i><span>Rate App<small>Tell us about your experience</small></span><i class="fas fa-chevron-right"></i></button><button type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span><i class="fas fa-chevron-right"></i></button></div>
+                </div>
+            </section>
+
+            <!-- Payment -->
+            <section id="payment" class="section hidden">
+                <div class="checkout-heading"><div><p class="eyebrow">Secure checkout</p><h2>Checkout</h2></div><button onclick="backToCart()" class="btn-secondary"><i class="fas fa-arrow-left"></i> Cart</button></div>
+                <div class="checkout-layout">
+                <div class="checkout-main">
+                <div class="checkout-panel"><div class="checkout-panel-heading"><h3>Select address</h3><button type="button" onclick="showUserSection('profile')" class="btn-link">Manage addresses</button></div><div id="checkoutAddressList" class="checkout-address-list"></div></div>
+                <div class="checkout-panel"><h3>Order items</h3><div id="checkoutItems"></div></div>
+                <div class="checkout-panel"><h3>Coupon</h3><div class="checkout-coupon"><input id="checkoutCouponCode" type="text" placeholder="Enter coupon code"><button type="button" onclick="applyCheckoutCoupon()" class="btn-secondary">Apply</button></div><p id="checkoutCouponMessage" class="form-message"></p></div>
+                <div class="checkout-panel"><h3>Payment method</h3>
+                <div class="payment-methods">
+                    <div class="payment-option active" data-method="cod">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Cash on Delivery</span>
+                    </div>
+                    <div class="payment-option" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>UPI / Online Payment</span>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- UPI Payment Options -->
+                <div id="upiOptions" class="upi-options hidden">
+                    <h3>Choose Payment Method</h3>
+                    <div class="upi-apps">
+                        <div class="upi-app" data-app="gpay">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png" alt="Google Pay" style="height: 40px;">
+                            <span>Google Pay</span>
+                        </div>
+                        <div class="upi-app" data-app="phonepe">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/PhonePe_logo.svg/512px-PhonePe_logo.svg.png" alt="PhonePe" style="height: 40px;">
+                            <span>PhonePe</span>
+                        </div>
+                        <div class="upi-app" data-app="paytm">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_logo.svg/512px-Paytm_logo.svg.png" alt="Paytm" style="height: 40px;">
+                            <span>Paytm</span>
+                        </div>
+                        <div class="upi-app" data-app="amazonpay">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Amazon_Pay_logo.svg/512px-Amazon_Pay_logo.svg.png" alt="Amazon Pay" style="height: 40px;">
+                            <span>Amazon Pay</span>
+                        </div>
+                        <div class="upi-app" data-app="other">
+                            <i class="fas fa-mobile-alt" style="font-size: 40px; color: #667eea;"></i>
+                            <span>Other UPI Apps</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Admin QR Code -->
+                    <div class="qr-section">
+                        <h4>Scan QR Code to Pay</h4>
+                        <div class="qr-code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=8115910227@ptyes&pn=Anuj%20Patel%20Kirana%20Store&am=" id="paymentQR" alt="Payment QR Code">
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: #666;">
+                            <strong>UPI ID:</strong> 8115910227@ptyes<br>
+                            <strong>Name:</strong> Patel Kirana Store
+                        </p>
+                    </div>
+                </div>
+                
+                </div>
+                <aside class="checkout-sidebar">
+                    <div class="checkout-panel"><h3>Order summary</h3><div id="orderPreview"></div><button onclick="generateBill()" class="btn-success btn-large checkout-place-button"><i class="fas fa-lock"></i> Place Order</button></div>
+                    <div class="live-location">
+                        <h4>📍 Live Location</h4>
+                        <div id="map"></div>
+                        <p id="locationInfo">Getting location...</p>
+                    </div>
+                </aside>
+                </div>
+            </section>
+
+            <!-- Offers -->
+            <section id="offers" class="section">
+                <h2>🎉 Special Offers</h2>
+                <div class="offers-grid" id="userOffersList"></div>
+            </section>
+
+            <!-- Help -->
+            <section id="help" class="section">
+                <h2>Help & Support</h2>
+                <div class="help-info">
+                    <div class="help-card large">
+                        <i class="fas fa-phone"></i>
+                        <h3>8115910227</h3>
+                        <p>Call for orders & queries</p>
+                    </div>
+                    <div class="help-card large">
+                        <i class="fas fa-whatsapp"></i>
+                        <h3>8115910227</h3>
+                        <p>WhatsApp support</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    </div>
+
+    <!-- Delivery Partner Dashboard -->
+    <div id="partnerPage" class="page-container hidden partner-dashboard">
+        <nav class="partner-nav"><div><strong><i class="fas fa-motorcycle"></i> Patel Delivery</strong><span id="partnerNameLabel"></span></div><button onclick="partnerLogout()" class="btn-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></nav>
+        <main class="partner-main">
+            <div class="partner-header"><div><p class="eyebrow">Delivery partner app</p><h1>Today on the road</h1><p id="partnerKycStatus" class="muted-text"></p></div><label class="online-toggle"><input id="partnerOnlineToggle" type="checkbox"> <span>Online</span></label></div>
+            <div class="partner-stats"><div><strong id="partnerTodayEarnings">₹0</strong><small>Today earnings</small></div><div><strong id="partnerDeliveries">0</strong><small>Deliveries</small></div><div><strong id="partnerIncentives">₹0</strong><small>Incentives</small></div></div>
+            <section class="partner-section"><div class="section-heading-row"><h2>Available orders</h2><button onclick="loadPartnerOrders()" class="btn-secondary"><i class="fas fa-sync"></i> Refresh</button></div><div id="partnerOrdersList" class="partner-order-list"></div></section>
+            <section class="partner-section"><h2>Weekly payouts</h2><div id="partnerPayoutList" class="partner-order-list"></div></section>
+            <section class="partner-section"><h2>Delivery history</h2><div id="partnerHistoryList" class="partner-order-list"></div></section>
+        </main>
+    </div>
+
+    <!-- Bill Modal -->
+    <div id="billModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📄 Bill Generated</h2>
+                <button onclick="closeBillModal()" class="close-modal">&times;</button>
+            </div>
+            <div id="billContent"></div>
+            <div class="modal-actions">
+                <button onclick="downloadBill()" class="btn-success">Download PDF</button>
+                <button onclick="placeFinalOrder()" class="btn-primary">Place Order</button>
+                <button onclick="closeBillModal()" class="btn-secondary">Edit Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
